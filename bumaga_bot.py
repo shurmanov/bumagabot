@@ -40,8 +40,8 @@ def language(bot, update):
 
 def period(bot, update):
     switcher = {
-        'O\'zbekcha': ['2 oy', '4 oy', '6 oy', 'Obuna davrini tanlang'],
-        'Русский': ['2 месяца', '4 месяца', '6 месяцев', 'Выберите период подписки']
+        'O\'zbekcha': ['1 oy', '3 oy', '6 oy', 'Obuna davrini tanlang'],
+        'Русский': ['1 месяца', '3 месяца', '6 месяцев', 'Выберите период подписки']
     }
     my_user[update.message.from_user.id] = update.message.text
 
@@ -54,8 +54,8 @@ def period(bot, update):
 
 def day(bot, update):
     switcher = {
-        'O\'zbekcha': ['Dush', 'Chor', 'Juma', 'Yetkazish kunini tanlang'],
-        'Русский': ['Пон', 'Среда', 'Пятница', 'Выберите день недели доставки']
+        'O\'zbekcha': ['Dush-Juma', 'Shanba', 'Yakshanba', 'Yetkazish kunini tanlang'],
+        'Русский': ['Пон-Пят', 'Суббота', 'Воскр', 'Выберите день недели доставки']
     }
     lang = my_user[update.message.from_user.id]
     update.message.reply_text(
@@ -78,8 +78,8 @@ def which_time(bot, update):
 
 def roll_number(bot, update):
     switcher = {
-        'O\'zbekcha': ['5', '10', '15', 'Rulonlar soni:'],
-        'Русский': ['5', '10', '15', 'Количество рулонов:']
+        'O\'zbekcha': ['4', '6', '12', 'Rulonlar soni:'],
+        'Русский': ['4', '6', '12', 'Количество рулонов:']
     }
 
     lang = my_user[update.message.from_user.id]
@@ -128,8 +128,8 @@ def kvartira(bot, update):
 
 def send_contact(bot, update):
     switcher = {
-        'O\'zbekcha': ['Tel.raqam ulashish', 'Siz bilan aloqa bizga muhim:'],
-        'Русский': ['Дать тел.номер', 'Нам важно Ваше Местоположение:']
+        'O\'zbekcha': ['Tel.raqam ulashish', 'Siz bilan aloqa biz uchun muhim:'],
+        'Русский': ['Дать тел.номер', 'Нам нужен ваш контакт:']
     }
     lang = my_user[update.message.from_user.id]
 
@@ -190,11 +190,11 @@ def main():
 
             SEND_LOC: [MessageHandler(Filters.all, send_loc)],
 
-            DOM: [MessageHandler(Filters.location, dom)],
+            DOM: [MessageHandler(Filters.all, dom)],
 
-            KVARTIRA: [MessageHandler(Filters.text, kvartira)],
+            KVARTIRA: [MessageHandler(Filters.all, kvartira)],
 
-            SEND_CONT: [MessageHandler(Filters.contact, send_contact)],
+            SEND_CONT: [MessageHandler(Filters.all, send_contact)],
 
             BYE: [MessageHandler(Filters.all, bye)],
         },

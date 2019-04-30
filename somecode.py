@@ -4,10 +4,12 @@
 1 - start ngrok
 2 - setWebhook
 THAT's All
-https://api.telegram.org/bot883849576:AAEvVttHB9ZoXh-XjsOQmalXqrvLkpcIyi0/setwebhook?url=https://895c81fe.ngrok.io
+https://api.telegram.org/bot883849576:AAEvVttHB9ZoXh-XjsOQmalXqrvLkpcIyi0/setwebhook?url=https://1f65d96b.ngrok.io
 
 TOKEN
 727157893:AAGvCVG-7y6MIsi7sc3W_kQ0Cv-Sa36gE8Q
+
+883849576:AAEvVttHB9ZoXh-XjsOQmalXqrvLkpcIyi0
 
 """
 
